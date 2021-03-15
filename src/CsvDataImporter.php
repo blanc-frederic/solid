@@ -38,7 +38,7 @@ class CsvDataImporter
         try {
             $this->db->beginTransaction();
 
-            $this->db->exec('TRUNCATE imported');
+            $this->db->exec('DELETE FROM imported');
 
             foreach ($records as $record) {
                 $this->db->prepare('INSERT INTO imported VALUES (?, ?, ?)')
