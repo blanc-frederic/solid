@@ -31,5 +31,11 @@ class TestsFacility
             champ2 TINYTEXT NOT NULL,
             champ3 TINYTEXT NOT NULL
         )');
+
+        $db->exec('CREATE TABLE users (
+            id TINYTEXT NOT NULL,
+            login TINYTEXT NOT NULL,
+            fullname TINYTEXT NOT NULL
+        )');
     }
 }
