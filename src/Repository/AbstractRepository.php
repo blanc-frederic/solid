@@ -6,8 +6,9 @@ namespace solid\Repository;
 
 use PDO;
 use PDOException;
+use solid\Contract\ImportDataInterface;
 
-abstract class AbstractRepository
+abstract class AbstractRepository implements ImportDataInterface
 {
     protected PDO $db;
     

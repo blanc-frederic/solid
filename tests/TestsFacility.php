@@ -35,7 +35,8 @@ class TestsFacility
         $db->exec('CREATE TABLE users (
             id TINYTEXT NOT NULL,
             login TINYTEXT NOT NULL,
-            fullname TINYTEXT NOT NULL
+            fullname TINYTEXT NOT NULL,
+            active TINYINT NOT NULL DEFAULT 1
         )');
     }
 }

@@ -2,23 +2,23 @@
 
 namespace solid;
 
+use solid\Contract\ImportDataInterface;
 use solid\Loader\CsvLoader;
-use solid\Repository\AbstractRepository;
 
 class DataImporter
 {
-    private AbstractRepository $repository;
+    private ImportDataInterface $importer;
     private CsvLoader $loader;
 
-    public function __construct(AbstractRepository $repository, CsvLoader $loader)
+    public function __construct(ImportDataInterface $importer, CsvLoader $loader)
     {
-        $this->repository = $repository;
+        $this->importer = $importer;
         $this->loader = $loader;
     }
 
     public function import(): void
     {
         $records = $this->loader->loadFile();
-        $this->repository->importData($records);
+        $this->importer->importData($records);
     }
 }
