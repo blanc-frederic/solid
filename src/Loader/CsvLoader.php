@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace solid\Loader;
 
-class CsvLoader
+use solid\Contract\LoaderInterface;
+
+class CsvLoader implements LoaderInterface
 {
-    protected string $filename;
+    private string $filename;
     
     public function __construct(string $filename)
     {

@@ -3,14 +3,14 @@
 namespace solid;
 
 use solid\Contract\ImportDataInterface;
-use solid\Loader\CsvLoader;
+use solid\Contract\LoaderInterface;
 
 class DataImporter
 {
     private ImportDataInterface $importer;
-    private CsvLoader $loader;
+    private LoaderInterface $loader;
 
-    public function __construct(ImportDataInterface $importer, CsvLoader $loader)
+    public function __construct(ImportDataInterface $importer, LoaderInterface $loader)
     {
         $this->importer = $importer;
         $this->loader = $loader;

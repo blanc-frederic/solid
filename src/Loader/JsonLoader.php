@@ -5,9 +5,17 @@ declare(strict_types=1);
 namespace solid\Loader;
 
 use DateTimeImmutable;
+use solid\Contract\LoaderInterface;
 
-class JsonLoader extends CsvLoader
+class JsonLoader implements LoaderInterface
 {
+    private string $filename;
+    
+    public function __construct(string $filename)
+    {
+        $this->filename = $filename;
+    }
+
     private function readFile(): array
     {
         return json_decode(file_get_contents($this->filename), true);
