@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace solid;
+namespace solid\Loader;
 
-class Loader
+class CsvLoader
 {
-    private string $filename;
+    protected string $filename;
     
     public function __construct(string $filename)
     {
